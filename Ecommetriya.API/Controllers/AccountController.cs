@@ -148,7 +148,7 @@ namespace Ecommetriya.API.Controllers
             if (rowsAffected > 0)
                 return Ok("User added successfully!");
             else
-                return Ok("Failed to add user.");
+                return BadRequest("Failed to add user.");
         }
 
     }
