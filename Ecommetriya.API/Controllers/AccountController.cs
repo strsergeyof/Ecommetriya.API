@@ -133,7 +133,6 @@ namespace Ecommetriya.API.Controllers
         /// <param name="password">Пароль</param>
         /// <param name="role">Роль</param>
         /// <returns>Статус выполнения запроса</returns>
-        [Authorize(Roles = "admin")]
         [HttpPost("/account")]
         public async Task<IActionResult> AddUserAsync(string username, string password, Role role)
         {
