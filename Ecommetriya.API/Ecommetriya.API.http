@@ -1,0 +1,6 @@
+@Ecommetriya.API_HostAddress = http://localhost:5009
+
+GET {{Ecommetriya.API_HostAddress}}/orders/
+Accept: application/json
+
+###
