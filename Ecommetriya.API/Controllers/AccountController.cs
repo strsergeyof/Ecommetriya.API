@@ -134,14 +134,9 @@ namespace Ecommetriya.API.Controllers
         /// <param name="role">Роль</param>
         /// <returns>Статус выполнения запроса</returns>
         [HttpPost("/account")]
-        public async Task<IActionResult> AddUserAsync(string username, string password, Role role)
+        public async Task<IActionResult> AddUserAsync([FromBody] User user)
         {
-            context.Users.Add(new User()
-            {
-                Login = username,
-                Password = password,
-                Role = role
-            });
+            context.Users.Add(user);
 
             int rowsAffected = await context.SaveChangesAsync();
 
