@@ -54,7 +54,7 @@ builder.Services.AddQuartz(q =>
 {
     q.UseMicrosoftDependencyInjectionJobFactory();
 
-    #region Загрузка данных по поставкам каждые 30 минут
+    #region Г‡Г ГЈГ°ГіГ§ГЄГ  Г¤Г Г­Г­Г»Гµ ГЇГ® ГЇГ®Г±ГІГ ГўГЄГ Г¬ ГЄГ Г¦Г¤Г»ГҐ 30 Г¬ГЁГ­ГіГІ
 
     var jobKeyLoadIncomes = new JobKey("LoadIncomes");
     q.AddJob<LoadIncomes>(opts => opts.WithIdentity(jobKeyLoadIncomes));
@@ -70,7 +70,7 @@ builder.Services.AddQuartz(q =>
     );
     #endregion
 
-    #region Загрузка данных по складу каждые 30 минут
+    #region Г‡Г ГЈГ°ГіГ§ГЄГ  Г¤Г Г­Г­Г»Гµ ГЇГ® Г±ГЄГ«Г Г¤Гі ГЄГ Г¦Г¤Г»ГҐ 30 Г¬ГЁГ­ГіГІ
 
     //var jobKeyLoadStocks = new JobKey("LoadStocks");
     //q.AddJob<LoadStocks>(opts => opts.WithIdentity(jobKeyLoadStocks));
@@ -86,7 +86,7 @@ builder.Services.AddQuartz(q =>
     //);
     #endregion
 
-    #region Загрузка данных по заказам каждые 30 минут
+    #region Г‡Г ГЈГ°ГіГ§ГЄГ  Г¤Г Г­Г­Г»Гµ ГЇГ® Г§Г ГЄГ Г§Г Г¬ ГЄГ Г¦Г¤Г»ГҐ 30 Г¬ГЁГ­ГіГІ
 
     //var jobKeyLoadOrders = new JobKey("LoadOrders");
     //q.AddJob<LoadOrders>(opts => opts.WithIdentity(jobKeyLoadOrders));
@@ -102,7 +102,7 @@ builder.Services.AddQuartz(q =>
     //);
     #endregion
 
-    #region Загрузка данных по продажам каждые 30 минут
+    #region Г‡Г ГЈГ°ГіГ§ГЄГ  Г¤Г Г­Г­Г»Гµ ГЇГ® ГЇГ°Г®Г¤Г Г¦Г Г¬ ГЄГ Г¦Г¤Г»ГҐ 30 Г¬ГЁГ­ГіГІ
 
     //var jobKeyLoadSales = new JobKey("LoadSales");
     //q.AddJob<LoadSales>(opts => opts.WithIdentity(jobKeyLoadSales));
@@ -118,7 +118,7 @@ builder.Services.AddQuartz(q =>
     //);
     #endregion
 
-    #region Загрузка подробного отчета каждый понедельник в 17:00
+    #region Г‡Г ГЈГ°ГіГ§ГЄГ  ГЇГ®Г¤Г°Г®ГЎГ­Г®ГЈГ® Г®ГІГ·ГҐГІГ  ГЄГ Г¦Г¤Г»Г© ГЇГ®Г­ГҐГ¤ГҐГ«ГјГ­ГЁГЄ Гў 17:00
 
     // var jobKeyLoadReportDetails = new JobKey("LoadReportDetails");
     // q.AddJob<LoadReportDetails>(opts => opts.WithIdentity(jobKeyLoadReportDetails));
@@ -137,7 +137,7 @@ builder.Services.AddQuartz(q =>
     // );
     #endregion
 
-    #region Загрузка ленты товаров каждые 30 минут
+    #region Г‡Г ГЈГ°ГіГ§ГЄГ  Г«ГҐГ­ГІГ» ГІГ®ГўГ Г°Г®Гў ГЄГ Г¦Г¤Г»ГҐ 30 Г¬ГЁГ­ГіГІ
 
     var jobKeyExecuteCardsFeeds = new JobKey("ExecuteCardsFeeds");
     q.AddJob<ExecuteCardsFeeds>(opts => opts.WithIdentity(jobKeyExecuteCardsFeeds));
@@ -153,7 +153,7 @@ builder.Services.AddQuartz(q =>
     );
     #endregion
 
-    #region Загрузка карточек товара каждый день в 00:01
+    #region Г‡Г ГЈГ°ГіГ§ГЄГ  ГЄГ Г°ГІГ®Г·ГҐГЄ ГІГ®ГўГ Г°Г  ГЄГ Г¦Г¤Г»Г© Г¤ГҐГ­Гј Гў 00:01
 
     //var jobKeyLoadCardsWildberries = new JobKey("LoadCardsWildberries");
     //q.AddJob<LoadCards>(opts => opts.WithIdentity(jobKeyLoadCardsWildberries));
@@ -161,30 +161,30 @@ builder.Services.AddQuartz(q =>
     //q.AddTrigger(opts => opts
     //.ForJob(jobKeyLoadCardsWildberries)
     //.WithIdentity($"{jobKeyLoadCardsWildberries}-trigger")
-    //.WithCronSchedule("0 1 0 * * ?") // Запуск каждый день в 00:01
+    //.WithCronSchedule("0 1 0 * * ?") // Г‡Г ГЇГіГ±ГЄ ГЄГ Г¦Г¤Г»Г© Г¤ГҐГ­Гј Гў 00:01
     //.StartNow()
     // );
     #endregion
 
-    #region Загрузка конкурентов каждый день в 00:01
+    #region Г‡Г ГЈГ°ГіГ§ГЄГ  ГЄГ®Г­ГЄГіГ°ГҐГ­ГІГ®Гў ГЄГ Г¦Г¤Г»Г© Г¤ГҐГ­Гј Гў 00:01
 
     //var jobKeyLoadCompetitors = new JobKey("LoadCompetitors");
     //q.AddJob<LoadCompetitors>(opts => opts.WithIdentity(jobKeyLoadCompetitors));
 
-    ////Каждый день в 01:00
+    ////ГЉГ Г¦Г¤Г»Г© Г¤ГҐГ­Гј Гў 01:00
     //q.AddTrigger(opts => opts
     //    .ForJob(jobKeyLoadCompetitors)
     //    .WithIdentity($"{jobKeyLoadCompetitors}-trigger")
-    //    .WithCronSchedule("0 1 0 * * ?") // Запуск каждый день в 00:01
+    //    .WithCronSchedule("0 1 0 * * ?") // Г‡Г ГЇГіГ±ГЄ ГЄГ Г¦Г¤Г»Г© Г¤ГҐГ­Гј Гў 00:01
     //    );
     #endregion
 
-    #region Загрузка рекламных кампаний в 03:03 каждый день
+    #region Г‡Г ГЈГ°ГіГ§ГЄГ  Г°ГҐГЄГ«Г Г¬Г­Г»Гµ ГЄГ Г¬ГЇГ Г­ГЁГ© Гў 03:03 ГЄГ Г¦Г¤Г»Г© Г¤ГҐГ­Гј
 
     //var jobKeyLoadAdverts = new JobKey("LoadAdverts");
     //q.AddJob<LoadAdverts>(opts => opts.WithIdentity(jobKeyLoadAdverts));
 
-    ////Каждый день в 03:03
+    ////ГЉГ Г¦Г¤Г»Г© Г¤ГҐГ­Гј Гў 03:03
     //q.AddTrigger(opts => opts
     //.ForJob(jobKeyLoadAdverts)
     //.WithIdentity($"{jobKeyLoadAdverts}-trigger")
@@ -208,7 +208,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+builder.Services.AddCors();
+app.UseHttpsRedirection();
+app.UseCors(builder => builder
+    .WithOrigins("http://localhost:5126")  //Р·Р°РїСЂРѕСЃ РёР· РєР»РёРµРЅС‚Р° РїРѕСЂС‚ 5126
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+);
 app.UseHttpsRedirection();
 
 app.MapControllers();
