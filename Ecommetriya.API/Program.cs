@@ -72,69 +72,69 @@ builder.Services.AddQuartz(q =>
 
     #region Çàãðóçêà äàííûõ ïî ñêëàäó êàæäûå 30 ìèíóò
 
-    //var jobKeyLoadStocks = new JobKey("LoadStocks");
-    //q.AddJob<LoadStocks>(opts => opts.WithIdentity(jobKeyLoadStocks));
+    var jobKeyLoadStocks = new JobKey("LoadStocks");
+    q.AddJob<LoadStocks>(opts => opts.WithIdentity(jobKeyLoadStocks));
 
-    //q.AddTrigger(opts => opts
-    //.ForJob(jobKeyLoadStocks)
-    //.WithIdentity($"{jobKeyLoadStocks}-trigger")
-    //.StartNow()
-    //.WithSimpleSchedule(x => x
-    //.WithIntervalInMinutes(30)
-    //.RepeatForever()
-    //.Build())
-    //);
+    q.AddTrigger(opts => opts
+    .ForJob(jobKeyLoadStocks)
+    .WithIdentity($"{jobKeyLoadStocks}-trigger")
+    .StartNow()
+    .WithSimpleSchedule(x => x
+    .WithIntervalInMinutes(30)
+    .RepeatForever()
+    .Build())
+    );
     #endregion
 
     #region Çàãðóçêà äàííûõ ïî çàêàçàì êàæäûå 30 ìèíóò
 
-    //var jobKeyLoadOrders = new JobKey("LoadOrders");
-    //q.AddJob<LoadOrders>(opts => opts.WithIdentity(jobKeyLoadOrders));
+    var jobKeyLoadOrders = new JobKey("LoadOrders");
+    q.AddJob<LoadOrders>(opts => opts.WithIdentity(jobKeyLoadOrders));
 
-    //q.AddTrigger(opts => opts
-    //.ForJob(jobKeyLoadOrders)
-    //.WithIdentity($"{jobKeyLoadOrders}-trigger")
-    //.StartNow()
-    //.WithSimpleSchedule(x => x
-    //.WithIntervalInMinutes(30)
-    //.RepeatForever()
-    //.Build())
-    //);
+    q.AddTrigger(opts => opts
+    .ForJob(jobKeyLoadOrders)
+    .WithIdentity($"{jobKeyLoadOrders}-trigger")
+    .StartNow()
+    .WithSimpleSchedule(x => x
+    .WithIntervalInMinutes(30)
+    .RepeatForever()
+    .Build())
+    );
     #endregion
 
     #region Çàãðóçêà äàííûõ ïî ïðîäàæàì êàæäûå 30 ìèíóò
 
-    //var jobKeyLoadSales = new JobKey("LoadSales");
-    //q.AddJob<LoadSales>(opts => opts.WithIdentity(jobKeyLoadSales));
+    var jobKeyLoadSales = new JobKey("LoadSales");
+    q.AddJob<LoadSales>(opts => opts.WithIdentity(jobKeyLoadSales));
 
-    //q.AddTrigger(opts => opts
-    //.ForJob(jobKeyLoadSales)
-    //.WithIdentity($"{jobKeyLoadSales}-trigger")
-    //.StartNow()
-    //.WithSimpleSchedule(x => x
-    //.WithIntervalInMinutes(30)
-    //.RepeatForever()
-    //.Build())
-    //);
+    q.AddTrigger(opts => opts
+    .ForJob(jobKeyLoadSales)
+    .WithIdentity($"{jobKeyLoadSales}-trigger")
+    .StartNow()
+    .WithSimpleSchedule(x => x
+    .WithIntervalInMinutes(30)
+    .RepeatForever()
+    .Build())
+    );
     #endregion
 
     #region Çàãðóçêà ïîäðîáíîãî îò÷åòà êàæäûé ïîíåäåëüíèê â 17:00
 
-    // var jobKeyLoadReportDetails = new JobKey("LoadReportDetails");
-    // q.AddJob<LoadReportDetails>(opts => opts.WithIdentity(jobKeyLoadReportDetails));
+    var jobKeyLoadReportDetails = new JobKey("LoadReportDetails");
+    q.AddJob<LoadReportDetails>(opts => opts.WithIdentity(jobKeyLoadReportDetails));
 
-    // q.AddTrigger(opts => opts
-    //.ForJob(jobKeyLoadReportDetails)
-    //.WithIdentity($"{jobKeyLoadReportDetails}-trigger-now")
-    //.StartNow()
-    //.WithSimpleSchedule(x => x.Build())
-    //);
+    q.AddTrigger(opts => opts
+   .ForJob(jobKeyLoadReportDetails)
+   .WithIdentity($"{jobKeyLoadReportDetails}-trigger-now")
+   .StartNow()
+   .WithSimpleSchedule(x => x.Build())
+   );
 
-    // q.AddTrigger(opts => opts
-    // .ForJob(jobKeyLoadReportDetails)
-    // .WithIdentity($"{jobKeyLoadReportDetails}-trigger")
-    // .WithCronSchedule("0 0 17 ? * MON")
-    // );
+    q.AddTrigger(opts => opts
+    .ForJob(jobKeyLoadReportDetails)
+    .WithIdentity($"{jobKeyLoadReportDetails}-trigger")
+    .WithCronSchedule("0 0 17 ? * MON")
+    );
     #endregion
 
     #region Çàãðóçêà ëåíòû òîâàðîâ êàæäûå 30 ìèíóò
@@ -168,32 +168,32 @@ builder.Services.AddQuartz(q =>
 
     #region Çàãðóçêà êîíêóðåíòîâ êàæäûé äåíü â 00:01
 
-    //var jobKeyLoadCompetitors = new JobKey("LoadCompetitors");
-    //q.AddJob<LoadCompetitors>(opts => opts.WithIdentity(jobKeyLoadCompetitors));
+    var jobKeyLoadCompetitors = new JobKey("LoadCompetitors");
+    q.AddJob<LoadCompetitors>(opts => opts.WithIdentity(jobKeyLoadCompetitors));
 
-    ////Êàæäûé äåíü â 01:00
-    //q.AddTrigger(opts => opts
-    //    .ForJob(jobKeyLoadCompetitors)
-    //    .WithIdentity($"{jobKeyLoadCompetitors}-trigger")
-    //    .WithCronSchedule("0 1 0 * * ?") // Çàïóñê êàæäûé äåíü â 00:01
-    //    );
+    //Êàæäûé äåíü â 01:00
+    q.AddTrigger(opts => opts
+        .ForJob(jobKeyLoadCompetitors)
+        .WithIdentity($"{jobKeyLoadCompetitors}-trigger")
+        .WithCronSchedule("0 1 0 * * ?") // Çàïóñê êàæäûé äåíü â 00:01
+        );
     #endregion
 
     #region Çàãðóçêà ðåêëàìíûõ êàìïàíèé â 03:03 êàæäûé äåíü
 
-    //var jobKeyLoadAdverts = new JobKey("LoadAdverts");
-    //q.AddJob<LoadAdverts>(opts => opts.WithIdentity(jobKeyLoadAdverts));
+    var jobKeyLoadAdverts = new JobKey("LoadAdverts");
+    q.AddJob<LoadAdverts>(opts => opts.WithIdentity(jobKeyLoadAdverts));
 
-    ////Êàæäûé äåíü â 03:03
-    //q.AddTrigger(opts => opts
-    //.ForJob(jobKeyLoadAdverts)
-    //.WithIdentity($"{jobKeyLoadAdverts}-trigger")
-    //.StartNow()
-    //.WithSimpleSchedule(x => x
-    //.WithIntervalInMinutes(30)
-    //.RepeatForever()
-    //.Build())
-    //);
+    //Êàæäûé äåíü â 03:03
+    q.AddTrigger(opts => opts
+    .ForJob(jobKeyLoadAdverts)
+    .WithIdentity($"{jobKeyLoadAdverts}-trigger")
+    .StartNow()
+    .WithSimpleSchedule(x => x
+    .WithIntervalInMinutes(30)
+    .RepeatForever()
+    .Build())
+    );
     #endregion
 });
 
